@@ -1,0 +1,17 @@
+header {
+  text-align: center;
+  h1 {
+    color: $primary-color;
+    font-size: 2em;
+    margin-bottom: .5em;
+  }
+  h2 {
+    color: lighten($gray-dark, 15%);
+    font-size: .8em;
+  }
+}
+footer {
+  text-align: center;
+  color: lighten($gray-dark, 10%);
+  span.heart { color: $cool-red; }
+}
