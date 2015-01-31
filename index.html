@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<section id="post-loop">
+  <div class="container">
+    {% for post in paginator.posts %}
+      <article>
+        <header>
+          <a href="{{ post.url }}" title="{{ post.title }}">
+            <h1>{{ post.title }}</h1>
+            <time>{{ post.date | date: "%D" }}</time>
+          </a>        
+        </header>
+        {{ post.content | truncatehtml | truncatewords: 90 }}
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
