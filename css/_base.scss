@@ -11,6 +11,12 @@ a {
   text-decoration: underline;
   &:hover { color: lighten($primary-color, 10%); }
 }
+i, em {
+  font-style: italic;
+}
+p {
+  margin-bottom: 1em;
+}
 
 .container {
   max-width: 800px;

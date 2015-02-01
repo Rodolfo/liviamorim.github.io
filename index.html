@@ -3,15 +3,18 @@ layout: default
 ---
 <section id="post-loop">
   <div class="container">
-    {% for post in paginator.posts %}
+    {% for post in site.posts limit:10 %}
       <article>
         <header>
           <a href="{{ post.url }}" title="{{ post.title }}">
             <h1>{{ post.title }}</h1>
-            <time>{{ post.date | date: "%D" }}</time>
           </a>        
+          <time><i class="fa fa-calendar"></i> {{ post.date | date: "%D" }}</time>
         </header>
-        {{ post.content | truncatehtml | truncatewords: 90 }}
+        {{ post.content | split:'<!--break-->' | first }}
+        {% if post.content contains '<!--break-->' %}
+          <a href="{{ post.url }}" title="{{ post.title }}">Leia mais</a>
+        {% endif %}
       </article>
     {% endfor %}
   </div>
